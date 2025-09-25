@@ -19,6 +19,9 @@ import java.util.Objects;       // used for a helper method
  * +---------+---------+
  * | France  |   US    |   Row 1
  * +---------+---------+
+ * Note:  I've included two approaches to size and place each flag in the GridPane - nested loops and a single loop
+ * I discovered the single loop approach which seems more elegant, but kept the nested loop approach.
+ * I commented out the nested loop approach which is how I originally sized and placed each flag.
  */
 public class Exercise14_1 extends Application {
     // Centralize sizing so it’s easy to tweak later
@@ -34,20 +37,37 @@ public class Exercise14_1 extends Application {
         pane.setHgap(10);
         pane.setVgap(10);
 
-        // call load() helper to load flag images
+        // call load() helper to create Image of each flag and place images in an array of flags
         Image us      = load("/image/us.png");
         Image china  = load("/image/china.png");
         Image france  = load("/image/france.png");
         Image germany = load("/image/germany.png");
+        Image[] flags = { germany, china, france, us };     // create an array Image[[ to hold flags to cycle through
 
-        // size each flag and place in the grid pane
-        Image[] flags = { germany, china, france, us };
+        // use nested loops to cycle through all flags, sizing and placing each in the grid
+        /* - comment out nested loop approach
+            int index = 0;                                      // tracks which flag we are using
+            for (int row = 0; row < 2; row++) {
+                for (int col = 0; col < 2; col++) {
+                    ImageView view = new ImageView(flags[index++]);
+                    view.setFitHeight(FLAG_HEIGHT);
+                    view.setFitWidth(FLAG_WIDTH);
+                    view.setPreserveRatio(true);
+                    pane.add(view, col, row);                   // places the flag image at row and col
+                }
+            }
+         */
+
+        // use a "trick" single loop to cycle through all flags, sizing and placing each in the grid
+        // cycles colums using col = i % 2 and when row is filled, step to next row with row = i / 2
         for (int i = 0; i < flags.length; i++) {
+            int col = i % 2;                         // cycles through 0..cols-1
+            int row = i / 2;                         // steps down when a row is filled
             ImageView view = new ImageView(flags[i]);
             view.setFitWidth(FLAG_WIDTH);
             view.setFitHeight(FLAG_HEIGHT);
             view.setPreserveRatio(true);
-            pane.add(view, i % 2, i / 2);
+            pane.add(view, col, row);                   // places flags[i] in the pane
         }
 
         // Create a scene and place it in the stage
