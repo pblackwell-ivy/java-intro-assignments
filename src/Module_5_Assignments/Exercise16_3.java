@@ -21,12 +21,6 @@ import javafx.stage.Stage;
  * When a radio button is selected, the light is turned on.
  * Only one light can be on at a time (see Figure 16.37a).
  * No light is on when the program starts.
- * 16.37a shows a vertically oriented rectangle with three circles, centered horizontally in the rectangle, evenly
- * spaced vertically inside the rectangle.
- * There are 3 radio buttons below the rectangle labeled red, yellow, and green.
- * To begin with, no radio buttons are selected and the 3 circles do not show any color (no lights on)
- * When a radio button is clicked, the corresponding circle changes color to match the radio button
- * Circle colors from top to bottom should be red, yellow, green.
  */
 public class Exercise16_3 extends Application {
     private static final int lightRadius = 30;
@@ -79,7 +73,6 @@ public class Exercise16_3 extends Application {
             }
         });
 
-
         // Define "controls" to hold the lightChoices
         HBox controls = new HBox(18, rbRed, rbYellow, rbGreen);
         controls.setAlignment(Pos.CENTER);
@@ -93,6 +86,7 @@ public class Exercise16_3 extends Application {
         // Clicking the background moves the focus off the radio buttons
         root.setOnMouseClicked(e -> root.requestFocus());
 
+        // Create a scene and place it in the stage
         Scene scene = new Scene(root, 420, 520);
         primaryStage.setTitle("Traffic Lights");
         primaryStage.setScene(scene);

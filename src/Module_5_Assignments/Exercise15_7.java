@@ -7,11 +7,10 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Circle;
 import javafx.stage.Stage;
 
-/// 15.7 (Change color using a mouse) Write a program that displays the color of a circle as black when
-/// the mouse button is pressed, and as white when the mouse button is released.
-///
-/// This program is built using lambda expressions to reduce the code instead of defining the whole class or
-/// an anonymous inner class for EventHandler.
+// 15.7 (Change color using a mouse) Write a program that displays the color of a circle as
+// black when the mouse button is pressed, and as white when the mouse button is released.
+// This program is built using lambda expressions to reduce the code instead of defining
+// the whole class or an anonymous inner class for EventHandler.
 public class Exercise15_7 extends Application {
 
     @Override

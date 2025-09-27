@@ -44,22 +44,9 @@ public class Exercise14_1 extends Application {
         Image germany = load("/image/germany.png");
         Image[] flags = { germany, china, france, us };     // create an array Image[[ to hold flags to cycle through
 
-        // use nested loops to cycle through all flags, sizing and placing each in the grid
-        /* - comment out nested loop approach
-            int index = 0;                                      // tracks which flag we are using
-            for (int row = 0; row < 2; row++) {
-                for (int col = 0; col < 2; col++) {
-                    ImageView view = new ImageView(flags[index++]);
-                    view.setFitHeight(FLAG_HEIGHT);
-                    view.setFitWidth(FLAG_WIDTH);
-                    view.setPreserveRatio(true);
-                    pane.add(view, col, row);                   // places the flag image at row and col
-                }
-            }
-         */
-
-        // use a "trick" single loop to cycle through all flags, sizing and placing each in the grid
-        // cycles colums using col = i % 2 and when row is filled, step to next row with row = i / 2
+        // use a "trick" single loop to cycle through all flags (instead of nested loops)
+        // sizing and placing each in the grid.  It cycles columns using col = i % 2
+        // and rows using row = i / 2 which steps to the next row when the row is filled.
         for (int i = 0; i < flags.length; i++) {
             int col = i % 2;                         // cycles through 0..cols-1
             int row = i / 2;                         // steps down when a row is filled
