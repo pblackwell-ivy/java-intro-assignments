@@ -29,7 +29,7 @@ import javafx.stage.Stage;
  * Circle colors from top to bottom should be red, yellow, green.
  */
 public class Exercise16_3 extends Application {
-
+    private static final int lightRadius = 30;
     @Override
     public void start(Stage primaryStage) {
         //  define lightArea that will hold the lights (housing and circles)
@@ -42,9 +42,9 @@ public class Exercise16_3 extends Application {
         housing.setStroke(Color.BLACK);
 
         // Make three lights that are turned off (white fill, black outline)
-        Circle redLight = makeOffCircle(30);
-        Circle yellowLight = makeOffCircle(30);
-        Circle greenLight = makeOffCircle(30);
+        Circle redLight = makeOffCircle(lightRadius);
+        Circle yellowLight = makeOffCircle(lightRadius);
+        Circle greenLight = makeOffCircle(lightRadius);
 
         VBox lights = new VBox(20, redLight, yellowLight, greenLight);
         lights.setAlignment(Pos.CENTER);
