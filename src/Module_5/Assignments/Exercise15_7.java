@@ -1,4 +1,4 @@
-package Module_5_Assignments;
+package Module_5.Assignments;
 
 import javafx.application.Application;
 import javafx.scene.Scene;

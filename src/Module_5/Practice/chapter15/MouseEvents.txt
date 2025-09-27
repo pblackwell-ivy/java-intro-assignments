@@ -1,0 +1,40 @@
+node.setOnMousePressed(e -> {
+    // runs when mouse button is pressed down
+});
+
+node.setOnMouseReleased(e -> {
+    // runs when button is released
+});
+
+node.setOnMouseClicked(e -> {
+    // runs when mouse is clicked (press + release)
+});
+
+node.setOnMouseEntered(e -> {
+    // runs when mouse moves into the node’s area
+});
+
+node.setOnMouseExited(e -> {
+    // runs when mouse leaves the node’s area
+});
+
+e is a MouseEvent. You can use:
+	•	e.getX(), e.getY() → coordinates relative to the node
+	•	e.getSceneX(), e.getSceneY() → coordinates relative to scene
+	•	e.isPrimaryButtonDown() / e.isSecondaryButtonDown()
+
+	scene.setOnKeyPressed(e -> {
+        System.out.println("Key pressed: " + e.getCode());
+    });
+
+    scene.setOnKeyReleased(e -> {
+        System.out.println("Key released: " + e.getCode());
+    });
+
+    scene.setOnKeyTyped(e -> {
+        System.out.println("Character typed: " + e.getCharacter());
+    });
+
+    e is a KeyEvent.
+    	•	e.getCode() → which key (like KeyCode.A, KeyCode.ENTER)
+    	•	e.getCharacter() → actual character typed (like "a", "A")

@@ -1,0 +1,17 @@
+### IntelliJ IDEA ###
+.idea/
+*.iml
+
+# Build output
+out/
+build/
+target/
+
+### Mac OS ###
+.DS_Store
+
+### Logs ###
+*.log
+
+### Compiled files ###
+*.class

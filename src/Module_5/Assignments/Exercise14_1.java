@@ -1,4 +1,4 @@
-package Module_5_Assignments;
+package Module_5.Assignments;
 
 import javafx.application.Application;
 import javafx.geometry.Insets;
@@ -38,10 +38,10 @@ public class Exercise14_1 extends Application {
         pane.setVgap(10);
 
         // call load() helper to create Image of each flag and place images in an array of flags
-        Image us      = load("/image/us.png");
-        Image china  = load("/image/china.png");
-        Image france  = load("/image/france.png");
-        Image germany = load("/image/germany.png");
+        Image us      = load("/Module_5/image/us.png");
+        Image china   = load("/Module_5/image/china.png");
+        Image france  = load("/Module_5/image/france.png");
+        Image germany = load("/Module_5/image/germany.png");
         Image[] flags = { germany, china, france, us };     // create an array Image[[ to hold flags to cycle through
 
         // use a "trick" single loop to cycle through all flags (instead of nested loops)
@@ -63,7 +63,7 @@ public class Exercise14_1 extends Application {
         primaryStage.show();
     }
 
-    // helper method to load images and return error if image resource not found
+    // helper method to load images and return error if Module_5.image resource not found
     private Image load(String path) {
         return new Image(Objects.requireNonNull(
                 getClass().getResourceAsStream(path),
