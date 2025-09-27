@@ -19,8 +19,7 @@ import javafx.stage.Stage;
  * **16.3 (Traffic lights) Write a program that simulates a traffic light.
  * The program lets the user select one of three lights: red, yellow, or green.
  * When a radio button is selected, the light is turned on.
- * Only one light can be on at a time (see Figure 16.37a).
- * No light is on when the program starts.
+ * Only one light can be on at a time. No light is on when the program starts.
  */
 public class Exercise16_3 extends Application {
     private static final int lightRadius = 30;
